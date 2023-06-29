@@ -19,7 +19,7 @@ def test_home_page_response_code(client):
 
 @pytest.mark.parametrize("url", ["/create"])
 @allure.title("Check Add Post Page Response Code")
-@allure.description("Verify that the 'Add Post' page returns a 200 status code")
+@allure.description("Verify that the Add Post page returns a 200 status code")
 def test_add_post_button_exists(client, url):
     response = client.get(url)
     assert response.status_code == 200
