@@ -1,0 +1,20 @@
+stages:
+  - linting
+  - testing
+
+linting:
+  image: python:3.11
+  stage: linting
+  script:
+    - pip install flake8
+    - flake8
+
+testing:
+  image: python:3.11
+  stage: testing
+  script:
+    - pip install -r requirements.txt
+    - pytest
+  artifacts:
+    paths:
+      - path/to/archive.zip
